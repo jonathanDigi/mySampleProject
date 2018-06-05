@@ -4,10 +4,10 @@ import LoginOrSignUpPage from './components/LoginOrSignUpPage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 
+
 const RouterComponent = () => (
 	<Router>
 		<Scene key="root">
-		
 			<Scene
 				key="LoginOrSignUp"
 				component={LoginOrSignUpPage}

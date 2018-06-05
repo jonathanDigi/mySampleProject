@@ -1,7 +1,7 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
 import { View, Text, Image } from 'react-native';
-import { CardSection, Card, LSButton } from './common';
+import { CardSection, Card, LSButton, Copyright } from './common';
 import { DIGILOCKLOGO } from './Images';
 
 
@@ -29,6 +29,7 @@ const LoginOrSignUpPage = () => (
 				Login{' '}
 			</LSButton>
 			<LSButton onPress={() => Actions.SignupPage()}> Signup </LSButton>
+				<Copyright />
 		</CardSection>
 
 	</Card>

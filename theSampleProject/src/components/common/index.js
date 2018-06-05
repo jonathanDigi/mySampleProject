@@ -4,6 +4,6 @@ export * from './Card.js';
 export * from './CardSection.js';
 export * from './Input.js';
 export * from './Spinner.js';
-export * from './CopyRightSection.js';
 export * from './LoginSignUpButton';
 export * from './LSButton';
+export * from './Copyright';

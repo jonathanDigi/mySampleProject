@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import { Card, Input, CardSection, LSButton } from './common';
+import { Card, Input, CardSection, LSButton, Copyright } from './common';
 import { DIGILOCKLOGO } from './Images';
 
 class SignupPage extends Component {
@@ -26,8 +26,11 @@ class SignupPage extends Component {
 				</CardSection>
 
 				<CardSection style={{ marginTop: 175 }}>
+						<Copyright />
 					<LSButton> Create</LSButton>
+
 				</CardSection>
+
 			</Card>
 		);
 	}
