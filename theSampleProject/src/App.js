@@ -8,15 +8,14 @@ import Router from './router';
 
 class App extends Component {
 	componentWillMount() {
-		const config = {
+		firebase.initializeApp({
 			apiKey: 'AIzaSyC4RwBjnYSahqnpDj_jWXdI5t9_icovbAs',
-			authDomain: 'mysampleproject-aaff8.firebaseapp.com',
-			databaseURL: 'https://mysampleproject-aaff8.firebaseio.com',
-			projectId: 'mysampleproject-aaff8',
-			storageBucket: 'mysampleproject-aaff8.appspot.com',
-			messagingSenderId: '747267529385'
-		};
-		firebase.initializeApp(config);
+    authDomain: 'mysampleproject-aaff8.firebaseapp.com',
+    databaseURL: 'https://mysampleproject-aaff8.firebaseio.com',
+    projectId: 'mysampleproject-aaff8',
+    storageBucket: 'mysampleproject-aaff8.appspot.com',
+    messagingSenderId: '747267529385'
+		});
 	}
 	render() {
 		const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));

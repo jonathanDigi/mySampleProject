@@ -3,6 +3,7 @@ import { Scene, Router } from 'react-native-router-flux';
 import LoginOrSignUpPage from './components/LoginOrSignUpPage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
+import SuccessPage from './components/SuccessPage';
 
 
 const RouterComponent = () => (
@@ -17,6 +18,7 @@ const RouterComponent = () => (
 			/>
 			<Scene key="LoginPage" component={LoginPage} />
 			<Scene key="SignupPage" component={SignupPage} />
+			<Scene key="SuccessPage" component={SuccessPage} hideNavBar />
 		</Scene>
 	</Router>
 );

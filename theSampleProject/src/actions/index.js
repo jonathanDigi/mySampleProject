@@ -25,12 +25,9 @@ export const logInUser = ({ email, password }) => dispatch => {
 		.auth()
 		.signInWithEmailAndPassword(email, password)
 		.then(user => logInUserSuccess(dispatch, user))
-		.catch(() => {
-			firebase
-				.auth()
-				.createUserWithEmailAndPassword(email, password)
-				.then(user => logInUserSuccess(dispatch, user))
-				.catch(() => logInUserFail(dispatch));
+		.catch(err => {
+			console.log('catching error', err);
+			logInUserFail(dispatch);
 		});
 };
 
@@ -39,9 +36,14 @@ const logInUserSuccess = (dispatch, user) => {
 		type: LOG_IN_USER_SUCCESS,
 		payload: user
 	});
-	Actions.main(); // THE Actual transition with the key of 'EmployeeList'
+  Actions.SuccessPage();
 };
 
 const logInUserFail = dispatch => {
 	dispatch({ type: LOG_IN_USER_FAIL });
 };
+
+// firebase
+//   .auth()
+//   .createUserWithEmailAndPassword(email, password)
+//   .then(user => logInUserSuccess(dispatch, user))

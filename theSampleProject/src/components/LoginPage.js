@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, logInUser } from '../actions';
-import { Card, Input, CardSection, LSButton, Copyright, Spinner } from './common';
+import { Card, Input, CardSection, LSButton, Spinner } from './common';
 import { DIGILOCKLOGO } from './Images';
 
 class LoginPage extends Component {
@@ -31,7 +31,7 @@ class LoginPage extends Component {
 		if (this.props.loading) {
 			return <Spinner size="large" />;
 		}
-		return <LSButton onPress={this.onButtonPress.bind(this)}>Log In</LSButton>;
+		return <LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
 	}
 	render() {
 		return (
@@ -47,20 +47,27 @@ class LoginPage extends Component {
 					</View>
 				</CardSection>
 				<CardSection>
-					<Input label="Email:" placeholder="email@yahoo.com" />
-					onChangeText={this.onEmailChange.bind(this)}
-					value={this.props.email}
+					<Input
+						label="Email:"
+						placeholder="email@yahoo.com"
+						onChangeText={this.onEmailChange.bind(this)}
+						value={this.props.email}
+					/>
 				</CardSection>
 
 				<CardSection>
-					<Input secureTextEntry label="Password:" placeholder="password" />
-					secureTextEntry onChangeText={this.onPasswordChange.bind(this)}
-					value={this.props.password}
+					<Input
+						secureTextEntry
+						label="Password:"
+						placeholder="password"
+						secureTextEntry
+						onChangeText={this.onPasswordChange.bind(this)}
+						value={this.props.password}
+					/>
 				</CardSection>
 				{this.renderError()}
 				<CardSection style={{ marginTop: 175 }}>
-					<LSButton onPress={this.onButtonPress.bind(this)}> Submit </LSButton>
-					<Copyright />
+					<LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
 				</CardSection>
 			</Card>
 		);
@@ -91,10 +98,10 @@ const Styles = {
 		flexDirection: 'row'
 	},
 	errorTextStyle: {
-	fontSize: 22,
-	color: 'red',
-	alignSelf: 'center'
-}
+		fontSize: 22,
+		color: 'red',
+		alignSelf: 'center'
+	}
 };
 
 const MapSateToProps = state => ({

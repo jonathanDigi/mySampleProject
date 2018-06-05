@@ -4,7 +4,6 @@ import { View, Text, Image } from 'react-native';
 import { CardSection, Card, LSButton, Copyright } from './common';
 import { DIGILOCKLOGO } from './Images';
 
-
 const LoginOrSignUpPage = () => (
 	<Card>
 		<CardSection style={{ marginTop: 50 }}>
@@ -25,13 +24,11 @@ const LoginOrSignUpPage = () => (
 		</CardSection>
 		<CardSection style={{ marginTop: 70 }}>
 			<LSButton onPress={() => Actions.LoginPage()} style={Styles.textStyle}>
-				{' '}
-				Login{' '}
+				Login
 			</LSButton>
 			<LSButton onPress={() => Actions.SignupPage()}> Signup </LSButton>
-				<Copyright />
+			<Copyright />
 		</CardSection>
-
 	</Card>
 );
 
