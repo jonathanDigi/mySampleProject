@@ -2,7 +2,8 @@ import {
 	EMAIL_CHANGED,
 	PASSWORD_CHANGED,
 	LOG_IN_USER_SUCCESS,
-	LOG_IN_USER_FAIL
+	LOG_IN_USER_FAIL,
+	CREATE_AND_LOGIN_USER
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -23,6 +24,8 @@ export default (state = INITIAL_STATE, action) => {
 			return { ...state, user: action.payload, error: '' };
 		case LOG_IN_USER_FAIL:
 			return { ...state, error: 'Authentication Failed.' };
+			case CREATE_AND_LOGIN_USER:
+			return { ...state, user: action.payload, error: '' };
 		default:
 			return state;
 	}

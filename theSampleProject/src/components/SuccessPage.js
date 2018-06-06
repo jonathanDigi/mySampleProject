@@ -18,7 +18,7 @@ class SuccessPage extends Component {
 					<View>
 						<Text style={Styles.greenTextStyle}>SUCCESSFULLY LOGGED IN!!!</Text>
 						<Text style={Styles.greenTextStyle}>
-							Welcome {this.props.email}
+							Welcome {this.props.email} 
 						</Text>
 					</View>
 				</CardSection>

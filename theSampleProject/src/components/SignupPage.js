@@ -1,9 +1,38 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import { Card, Input, CardSection, LSButton, Copyright } from './common';
+import { connect } from 'react-redux';
+import { emailChanged, passwordChanged, createAndLogInUser } from '../actions';
+import { Card, Input, CardSection, LSButton, Spinner } from './common';
 import { DIGILOCKLOGO } from './Images';
 
 class SignupPage extends Component {
+	onEmailChange(text) {
+		this.props.emailChanged(text);
+	}
+
+	onPasswordChange(text) {
+		this.props.passwordChanged(text);
+	}
+	onButtonPress() {
+		const { email, password } = this.props;
+		this.props.createAndLogInUser({ email, password });
+	}
+	renderError() {
+		if (this.props.error) {
+			return (
+				<View style={{ backgroundColor: 'white' }}>
+					<Text style={Styles.errorTextStyle}>{this.props.error}</Text>
+				</View>
+			);
+		}
+	}
+
+	renderButton() {
+		if (this.props.loading) {
+			return <Spinner size="large" />;
+		}
+		return <LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
+	}
 	render() {
 		return (
 			<Card>
@@ -14,23 +43,32 @@ class SignupPage extends Component {
 				</CardSection>
 				<CardSection>
 					<View>
-						<Text style={Styles.blueTextStyle}> Signup </Text>
+						<Text style={Styles.blueTextStyle}> Login </Text>
 					</View>
 				</CardSection>
 				<CardSection>
-					<Input label="Email:" placeholder="email@yahoo.com" />
+					<Input
+						label="Email:"
+						placeholder="email@yahoo.com"
+						onChangeText={this.onEmailChange.bind(this)}
+						value={this.props.email}
+					/>
 				</CardSection>
 
 				<CardSection>
-					<Input secureTextEntry label="Password:" placeholder="password" />
+					<Input
+						secureTextEntry
+						label="Password:"
+						placeholder="password"
+						secureTextEntry
+						onChangeText={this.onPasswordChange.bind(this)}
+						value={this.props.password}
+					/>
 				</CardSection>
-
+				{this.renderError()}
 				<CardSection style={{ marginTop: 175 }}>
-						<Copyright />
-					<LSButton> Create</LSButton>
-
+					<LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
 				</CardSection>
-
 			</Card>
 		);
 	}
@@ -58,7 +96,20 @@ const Styles = {
 		color: '#1ABAEF',
 		fontStyle: 'normal',
 		flexDirection: 'row'
+	},
+	errorTextStyle: {
+		fontSize: 22,
+		color: 'red',
+		alignSelf: 'center'
 	}
 };
 
-export default SignupPage;
+const MapSateToProps = state => ({
+	email: state.auth.email,
+	password: state.auth.password,
+	error: state.auth.error
+});
+
+export default connect(MapSateToProps, { emailChanged, passwordChanged, createAndLogInUser })(
+	SignupPage
+);
