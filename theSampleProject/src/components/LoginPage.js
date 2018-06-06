@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, logInUser } from '../actions';
-import { Card, Input, CardSection, LSButton, Spinner } from './common';
+import { Card, Input, CardSection, Button, Spinner } from './common';
 import { DIGILOCKLOGO } from './Images';
 
 class LoginPage extends Component {
@@ -31,7 +31,7 @@ class LoginPage extends Component {
 		if (this.props.loading) {
 			return <Spinner size="large" />;
 		}
-		return <LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
+		return <Button onPress={this.onButtonPress.bind(this)}>Submit</Button>;
 	}
 	render() {
 		return (
@@ -67,7 +67,7 @@ class LoginPage extends Component {
 				</CardSection>
 				{this.renderError()}
 				<CardSection style={{ marginTop: 175 }}>
-					<LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
+					<Button onPress={this.onButtonPress.bind(this)}>Submit</Button>;
 				</CardSection>
 			</Card>
 		);

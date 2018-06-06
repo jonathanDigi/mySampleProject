@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, createAndLogInUser } from '../actions';
-import { Card, Input, CardSection, LSButton, Spinner } from './common';
+import { Card, Input, CardSection, Button, Spinner } from './common';
 import { DIGILOCKLOGO } from './Images';
 
 class SignupPage extends Component {
@@ -31,7 +31,7 @@ class SignupPage extends Component {
 		if (this.props.loading) {
 			return <Spinner size="large" />;
 		}
-		return <LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
+		return <Button onPress={this.onButtonPress.bind(this)}>Create</Button>;
 	}
 	render() {
 		return (
@@ -43,7 +43,7 @@ class SignupPage extends Component {
 				</CardSection>
 				<CardSection>
 					<View>
-						<Text style={Styles.blueTextStyle}> Login </Text>
+						<Text style={Styles.blueTextStyle}> Signup </Text>
 					</View>
 				</CardSection>
 				<CardSection>
@@ -67,7 +67,7 @@ class SignupPage extends Component {
 				</CardSection>
 				{this.renderError()}
 				<CardSection style={{ marginTop: 175 }}>
-					<LSButton onPress={this.onButtonPress.bind(this)}>Submit</LSButton>;
+					<Button onPress={this.onButtonPress.bind(this)}>Create</Button>;
 				</CardSection>
 			</Card>
 		);

@@ -22,11 +22,15 @@ const LoginOrSignUpPage = () => (
 				<Text style={Styles.securePackagesStyle}> Simply Secure your Packages </Text>
 			</View>
 		</CardSection>
-		<CardSection style={{ marginTop: 70 }}>
+		<CardSection style={{ marginTop: 70, flexDirection: 'column' }}>
 			<LSButton onPress={() => Actions.LoginPage()} style={Styles.textStyle}>
 				Login
 			</LSButton>
+		</CardSection>
+		<CardSection style={{ marginTop: 20, flexDirection: 'column' }}>
 			<LSButton onPress={() => Actions.SignupPage()}> Signup </LSButton>
+		</CardSection>
+		<CardSection style={{ marginTop: 10 }}>
 			<Copyright />
 		</CardSection>
 	</Card>
