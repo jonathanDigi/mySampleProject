@@ -1,7 +1,7 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
 import { View, Text, Image } from 'react-native';
-import { CardSection, Card, LSButton, Copyright } from './common';
+import { CardSection, Card, LSButton } from './common';
 import { DIGILOCKLOGO } from './Images';
 
 const LoginOrSignUpPage = () => (
@@ -29,9 +29,6 @@ const LoginOrSignUpPage = () => (
 		</CardSection>
 		<CardSection style={{ marginTop: 20, flexDirection: 'column' }}>
 			<LSButton onPress={() => Actions.SignupPage()}> Signup </LSButton>
-		</CardSection>
-		<CardSection style={{ marginTop: 10 }}>
-			<Copyright />
 		</CardSection>
 	</Card>
 );

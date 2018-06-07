@@ -3,7 +3,16 @@ import { Text, View } from 'react-native';
 
 const Copyright = () => (
 	<View>
-		<View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+		<View
+			style={{
+				position: 'absolute',
+				bottom: 5,
+				left: 0,
+				right: 0,
+				justifyContent: 'center',
+				alignItems: 'center'
+			}}
+		>
 			<Text style={Styles.CopyrightStyle}>©Copyright 2018 Digilock by Security People Inc. </Text>
 		</View>
 	</View>

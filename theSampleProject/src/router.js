@@ -5,7 +5,6 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import SuccessPage from './components/SuccessPage';
 
-
 const RouterComponent = () => (
 	<Router>
 		<Scene key="root">
