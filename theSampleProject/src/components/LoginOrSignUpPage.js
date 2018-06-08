@@ -31,10 +31,10 @@ const LoginOrSignUpPage = () => (
 			}}
 		>
 			<LSButton onPress={() => Actions.LoginPage()} >
-				Login
+				LOGIN
 			</LSButton>
 			<LSButton onPress={() => Actions.SignupPage()} >
-				Signup
+				SIGNUP
 			</LSButton>
 		</CardSection>
 	</Card>

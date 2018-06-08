@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, KeyboardAvoidingView } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, logInUser } from '../actions';
 import { Card, Input, CardSection, Button, Spinner } from './common';
-import { DIGILOCKLOGO } from './Images';
 
 class LoginPage extends Component {
 	onEmailChange(text) {
@@ -15,6 +14,7 @@ class LoginPage extends Component {
 	}
 	onButtonPress() {
 		const { email, password } = this.props;
+
 		this.props.logInUser({ email, password });
 	}
 	renderError() {
@@ -35,41 +35,55 @@ class LoginPage extends Component {
 	}
 	render() {
 		return (
-			<Card>
-				<CardSection style={{ marginTop: 50 }}>
-					<View>
-						<Image style={{ width: 300, height: 55 }} source={DIGILOCKLOGO} />
-					</View>
-				</CardSection>
-				<CardSection>
-					<View>
-						<Text style={Styles.blueTextStyle}> Login </Text>
-					</View>
-				</CardSection>
-				<CardSection>
-					<Input
-						label="Email:"
-						placeholder="email@yahoo.com"
-						onChangeText={this.onEmailChange.bind(this)}
-						value={this.props.email}
-					/>
-				</CardSection>
+			<KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+				<Card>
+					<CardSection
+						style={{
+							flex: 0.5,
+							alignItems: 'center',
+							justifyContent: 'center'
+						}}
+					>
+						<View>
+							<Text style={Styles.blueTextStyle}> Login </Text>
+						</View>
+					</CardSection>
 
-				<CardSection>
-					<Input
-						secureTextEntry
-						label="Password:"
-						placeholder="password"
-						secureTextEntry
-						onChangeText={this.onPasswordChange.bind(this)}
-						value={this.props.password}
-					/>
-				</CardSection>
-				{this.renderError()}
-				<CardSection style={{ marginTop: 175 }}>
-					<Button onPress={this.onButtonPress.bind(this)}>Submit</Button>;
-				</CardSection>
-			</Card>
+					<CardSection
+						style={{
+							flex: 1,
+							alignItems: 'center',
+							justifyContent: 'center',
+							flexDirection: 'column'
+						}}
+					>
+						<Input
+							placeholder="Email"
+							onChangeText={this.onEmailChange.bind(this)}
+							value={this.props.email}
+						/>
+
+						<Input
+							secureTextEntry
+							placeholder="Password"
+							secureTextEntry
+							onChangeText={this.onPasswordChange.bind(this)}
+							value={this.props.password}
+						/>
+					</CardSection>
+
+					{this.renderError()}
+					<CardSection
+						style={{
+							marginTop: 10,
+							alignItems: 'center',
+							justifyContent: 'center'
+						}}
+					>
+						<Button onPress={this.onButtonPress.bind(this)}>SUBMIT</Button>;
+					</CardSection>
+				</Card>
+			</KeyboardAvoidingView>
 		);
 	}
 }
@@ -83,7 +97,8 @@ const Styles = {
 	blueTextStyle: {
 		fontSize: 33,
 		color: '#1ABAEF',
-		fontStyle: ('bold', 'normal')
+		fontStyle: ('bold', 'normal'),
+		letterSpacing: 2
 	},
 	CopyrightStyle: {
 		fontSize: 11,

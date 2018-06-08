@@ -1,52 +1,40 @@
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 
-const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
-const { inputStyle, labelStyle, containerStyle } = styles;
+const Input = ({ value, onChangeText, placeholder, secureTextEntry }) => {
+	const { inputStyle, containerStyle } = styles;
 
-return (
-		<View style={containerStyle}>
-			<Text style={labelStyle}> {label } </Text>
-
-
+	return (
+		<View style={(containerStyle, { justifyContent: 'center', alignItems: 'center', flex: 1 })}>
 			<TextInput
-      secureTextEntry={secureTextEntry}
-      placeholder={placeholder}
-      autoCorrect={false}
-      style={inputStyle}
-      onChangeText={onChangeText}
-      value={value}
+				secureTextEntry={secureTextEntry}
+				placeholder={placeholder}
+				autoCorrect={false}
+				style={inputStyle}
+				onChangeText={onChangeText}
+				value={value}
 			/>
 		</View>
-  );
-	};
+	);
+};
 
-  const styles = {
-    inputStyle: {
-      color: '#000',
-      paddingRight: 5,
-      paddingLeft: 5,
-      fontSize: 18,
-      lineHeight: 23,
-      flex: 2,
-      height: 20,
-      width: 100
-    },
-    labelStyle: {
-      fontSize: 18,
-      paddingLeft: 5,
-      flex: 1
-
-    },
-    containerStyle: {
-      height: 40,
-      flex: 1,
-      flexDirection: 'row',
-      alignItems: 'center'
-
-    }
+const styles = {
+	inputStyle: {
+		color: '#000',
+		fontSize: 18,
+		lineHeight: 25,
+		height: 35,
+		width: 300,
+		borderBottomColor: '#E5E5E5',
+		borderBottomWidth: 2,
 
 
-  };
+	},
+
+	containerStyle: {
+		flexDirection: 'row',
+		alignItems: 'center'
+	}
+};
 
 export { Input };
