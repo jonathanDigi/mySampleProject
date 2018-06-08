@@ -1,48 +1,54 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { CardSection, Card, LSButton } from './common';
-import { DIGILOCKLOGO } from './Images';
+
 
 const LoginOrSignUpPage = () => (
 	<Card>
-		<CardSection style={{ marginTop: 50 }}>
-			<View>
-				<Image style={{ width: 300, height: 55 }} source={DIGILOCKLOGO} />
-			</View>
-		</CardSection>
+		<CardSection style={{ paddingTop: 30, flex: 1 }}>
+			<View
+				style={{
 
-		<CardSection>
-			<View>
-				<Text style={Styles.blueTextStyle}> Package Locker </Text>
+					alignItems: 'center',
+					justifyContent: 'center'
+				}}
+			>
+				<Text style={Styles.blueTextStyle}> Package </Text>
+				<Text style={Styles.blueTextStyle}> Locker </Text>
 			</View>
 		</CardSection>
-		<CardSection>
-			<View>
-				<Text style={Styles.securePackagesStyle}> Simply Secure your Packages </Text>
+		<CardSection style={{ flex: 0.25 }}>
+			<View style={{ justifyContent: 'center', alignItems: 'center' }}>
+				<Text style={Styles.securePackagesStyle}> Simply Secure your</Text>
+				<Text style={Styles.securePackagesStyle}> packages </Text>
 			</View>
 		</CardSection>
-		<CardSection style={{ marginTop: 70, flexDirection: 'column' }}>
-			<LSButton onPress={() => Actions.LoginPage()} style={Styles.textStyle}>
+		<CardSection
+			style={{
+				flex: 1.5,
+				flexDirection: 'column'
+			}}
+		>
+			<LSButton onPress={() => Actions.LoginPage()} >
 				Login
 			</LSButton>
-		</CardSection>
-		<CardSection style={{ marginTop: 20, flexDirection: 'column' }}>
-			<LSButton onPress={() => Actions.SignupPage()}> Signup </LSButton>
+			<LSButton onPress={() => Actions.SignupPage()} >
+				Signup
+			</LSButton>
 		</CardSection>
 	</Card>
 );
 
 const Styles = {
-	textStyle: {
-		fontSize: 33,
-		color: 'black',
-		fontStyle: ('bold', 'normal')
-	},
+
 	blueTextStyle: {
-		fontSize: 33,
+		fontSize: 50,
 		color: '#1ABAEF',
-		fontStyle: ('bold', 'normal')
+		fontStyle: ('bold', 'normal'),
+		fontWeight: 'bold',
+		letterSpacing: 12,
+		margin: 2
 	},
 	CopyrightStyle: {
 		fontSize: 11,
@@ -54,7 +60,8 @@ const Styles = {
 		fontSize: 20,
 		color: '#1ABAEF',
 		fontStyle: 'normal',
-		flexDirection: 'row'
+		flexDirection: 'column',
+		letterSpacing: 6
 	}
 };
 
