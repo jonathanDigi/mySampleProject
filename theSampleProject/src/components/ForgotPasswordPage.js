@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, KeyboardAvoidingView } from 'react-native';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
 import { emailChanged, passwordChanged, logInUser } from '../actions';
-import { Card, Input, CardSection, Button, Spinner, BackButton } from './common';
+import { Card, Input, CardSection, Button, Spinner } from './common';
 
-class LoginPage extends Component {
+class ForgotPasswordPage extends Component {
 	onEmailChange(text) {
 		this.props.emailChanged(text);
 	}
@@ -42,17 +41,12 @@ class LoginPage extends Component {
 						style={{
 							flex: 0.5,
 							alignItems: 'center',
-							justifyContent: 'center',
-							flexDirection: 'column'
+							justifyContent: 'center'
 						}}
 					>
-
-						<CardSection>
-
-							<BackButton onPress={() => Actions.LoginOrSignUp()}> Back </BackButton>
-						</CardSection>
 						<View>
-							<Text style={Styles.blueTextStyle}> Login </Text>
+							<Text style={Styles.blueTextStyle}> Forgot Your </Text>
+              <Text style={Styles.blueTextStyle}> Password?</Text>
 						</View>
 					</CardSection>
 
@@ -68,14 +62,6 @@ class LoginPage extends Component {
 							placeholder="Email"
 							onChangeText={this.onEmailChange.bind(this)}
 							value={this.props.email}
-						/>
-
-						<Input
-							secureTextEntry
-							placeholder="Password"
-							secureTextEntry
-							onChangeText={this.onPasswordChange.bind(this)}
-							value={this.props.password}
 						/>
 					</CardSection>
 
@@ -132,4 +118,6 @@ const MapSateToProps = state => ({
 	error: state.auth.error
 });
 
-export default connect(MapSateToProps, { emailChanged, passwordChanged, logInUser })(LoginPage);
+export default connect(MapSateToProps, { emailChanged, passwordChanged, logInUser })(
+	ForgotPasswordPage
+);

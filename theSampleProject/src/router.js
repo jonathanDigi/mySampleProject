@@ -15,7 +15,7 @@ const RouterComponent = () => (
 				title="Login or Signup"
 				initial
 			/>
-			<Scene key="LoginPage" component={LoginPage} />
+			<Scene key="LoginPage" component={LoginPage} hideNavBar />
 			<Scene key="SignupPage" component={SignupPage} />
 			<Scene key="SuccessPage" component={SuccessPage} hideNavBar />
 		</Scene>

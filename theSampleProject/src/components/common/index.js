@@ -7,3 +7,4 @@ export * from './Spinner.js';
 export * from './LoginSignUpButton';
 export * from './LSButton';
 export * from './Copyright';
+export * from './BackButton';
