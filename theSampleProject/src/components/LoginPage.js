@@ -3,7 +3,7 @@ import { View, Text, KeyboardAvoidingView } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { emailChanged, passwordChanged, logInUser } from '../actions';
-import { Card, Input, CardSection, Button, Spinner, BackButton } from './common';
+import { Card, Input, CardSection, Button, Spinner, BackButton, UnderLineButton } from './common';
 
 class LoginPage extends Component {
 	onEmailChange(text) {
@@ -46,16 +46,13 @@ class LoginPage extends Component {
 							flexDirection: 'column'
 						}}
 					>
-
 						<CardSection>
-
 							<BackButton onPress={() => Actions.LoginOrSignUp()}> Back </BackButton>
 						</CardSection>
 						<View>
 							<Text style={Styles.blueTextStyle}> Login </Text>
 						</View>
 					</CardSection>
-
 					<CardSection
 						style={{
 							flex: 1,
@@ -78,7 +75,6 @@ class LoginPage extends Component {
 							value={this.props.password}
 						/>
 					</CardSection>
-
 					{this.renderError()}
 					<CardSection
 						style={{
@@ -89,6 +85,9 @@ class LoginPage extends Component {
 					>
 						<Button onPress={this.onButtonPress.bind(this)}>SUBMIT</Button>;
 					</CardSection>
+					<UnderLineButton onPress={() => Actions.ForgotPage()}>
+						Forgot Password
+					</UnderLineButton>;
 				</Card>
 			</KeyboardAvoidingView>
 		);

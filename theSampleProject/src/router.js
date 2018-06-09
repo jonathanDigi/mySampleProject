@@ -4,6 +4,7 @@ import LoginOrSignUpPage from './components/LoginOrSignUpPage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import SuccessPage from './components/SuccessPage';
+import ForgotPasswordPage from './components/ForgotPasswordPage';
 
 const RouterComponent = () => (
 	<Router>
@@ -18,6 +19,7 @@ const RouterComponent = () => (
 			<Scene key="LoginPage" component={LoginPage} hideNavBar />
 			<Scene key="SignupPage" component={SignupPage} />
 			<Scene key="SuccessPage" component={SuccessPage} hideNavBar />
+			<Scene key="ForgotPage" component={ForgotPasswordPage} hideNavBar />
 		</Scene>
 	</Router>
 );

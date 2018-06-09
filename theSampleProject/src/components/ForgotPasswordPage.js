@@ -46,7 +46,7 @@ class ForgotPasswordPage extends Component {
 					>
 						<View>
 							<Text style={Styles.blueTextStyle}> Forgot Your </Text>
-              <Text style={Styles.blueTextStyle}> Password?</Text>
+							<Text style={Styles.blueTextStyle}> Password?</Text>
 						</View>
 					</CardSection>
 
