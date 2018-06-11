@@ -36,14 +36,15 @@ class LoginPage extends Component {
 	}
 	render() {
 		return (
-			<KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+			<View style={{ flex: 1 }}>
 				<Card>
 					<CardSection
 						style={{
-							flex: 0.5,
+							flex: 0.7,
 							alignItems: 'center',
 							justifyContent: 'center',
-							flexDirection: 'column'
+							flexDirection: 'column',
+							paddingTop: 20
 						}}
 					>
 						<CardSection>
@@ -53,43 +54,43 @@ class LoginPage extends Component {
 							<Text style={Styles.blueTextStyle}> Login </Text>
 						</View>
 					</CardSection>
-					<CardSection
-						style={{
-							flex: 1,
-							alignItems: 'center',
-							justifyContent: 'center',
-							flexDirection: 'column'
-						}}
-					>
-						<Input
-							placeholder="Email"
-							onChangeText={this.onEmailChange.bind(this)}
-							value={this.props.email}
-						/>
+					<KeyboardAvoidingView style={{ flex: 2 }} behavior="padding">
+						<CardSection
+							style={{
+								flex: 1,
+								alignItems: 'center',
+								justifyContent: 'center',
+								flexDirection: 'column'
+							}}
+						>
+							<Input
+								placeholder="Email"
+								onChangeText={this.onEmailChange.bind(this)}
+								value={this.props.email}
+							/>
 
-						<Input
-							secureTextEntry
-							placeholder="Password"
-							secureTextEntry
-							onChangeText={this.onPasswordChange.bind(this)}
-							value={this.props.password}
-						/>
-					</CardSection>
-					{this.renderError()}
-					<CardSection
-						style={{
-							marginTop: 10,
-							alignItems: 'center',
-							justifyContent: 'center'
-						}}
-					>
-						<Button onPress={this.onButtonPress.bind(this)}>SUBMIT</Button>;
-					</CardSection>
-					<UnderLineButton onPress={() => Actions.ForgotPage()}>
-						Forgot Password
-					</UnderLineButton>;
+							<Input
+								secureTextEntry
+								placeholder="Password"
+								secureTextEntry
+								onChangeText={this.onPasswordChange.bind(this)}
+								value={this.props.password}
+							/>
+						</CardSection>
+						{this.renderError()}
+						<CardSection
+							style={{
+								marginTop: 10,
+								alignItems: 'center',
+								justifyContent: 'center'
+							}}
+						>
+							<Button onPress={this.onButtonPress.bind(this)}>SUBMIT</Button>;
+						</CardSection>
+					</KeyboardAvoidingView>
+					<UnderLineButton onPress={() => Actions.ForgotPage()}>Forgot Password</UnderLineButton>;
 				</Card>
-			</KeyboardAvoidingView>
+			</View>
 		);
 	}
 }

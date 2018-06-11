@@ -9,7 +9,7 @@ import Router from './router';
 import { Copyright } from './components/common';
 
 class App extends Component {
-	componentWillMount() {
+	componentDidMount() {
 		firebase.initializeApp({
 			apiKey: 'AIzaSyC4RwBjnYSahqnpDj_jWXdI5t9_icovbAs',
 			authDomain: 'mysampleproject-aaff8.firebaseapp.com',

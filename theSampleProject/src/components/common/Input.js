@@ -26,10 +26,9 @@ const styles = {
 		height: 35,
 		width: 300,
 		borderBottomColor: '#E5E5E5',
-		borderBottomWidth: 2,
-
-
+		borderBottomWidth: 2
 	},
+
 
 	containerStyle: {
 		flexDirection: 'row',
