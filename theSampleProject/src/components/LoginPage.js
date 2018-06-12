@@ -6,6 +6,7 @@ import { emailChanged, passwordChanged, logInUser } from '../actions';
 import { Card, Input, CardSection, Button, Spinner, BackButton, UnderLineButton } from './common';
 
 class LoginPage extends Component {
+	state = { submitButtonPressed: 'false' };
 	onEmailChange(text) {
 		this.props.emailChanged(text);
 	}
@@ -15,8 +16,31 @@ class LoginPage extends Component {
 	}
 	onButtonPress() {
 		const { email, password } = this.props;
+		this.setState({ submitButtonPressed: 'true' });
+		if (this.props.email === '' || this.props.password === '') {
+			console.log('nothing has been entered');
+		} else {
+			this.props.logInUser({ email, password });
+		}
+	}
+	renderEmailError() {
+		if (this.props.email === '' && this.state.submitButtonPressed === 'true') {
+			return (
+				<View style={{ backgroundColor: 'white' }}>
+					<Text style={Styles.errorTextStyle}>{'Please enter a valid email'}</Text>
+				</View>
+			);
+		}
+	}
 
-		this.props.logInUser({ email, password });
+	renderPasswordError() {
+		if (this.props.password === '' && this.state.submitButtonPressed === 'true') {
+			return (
+				<View style={{ backgroundColor: 'white' }}>
+					<Text style={Styles.errorTextStyle}>{'Please enter a valid password'}</Text>
+				</View>
+			);
+		}
 	}
 	renderError() {
 		if (this.props.error) {
@@ -63,12 +87,13 @@ class LoginPage extends Component {
 								flexDirection: 'column'
 							}}
 						>
+							const selected = false
 							<Input
 								placeholder="Email"
 								onChangeText={this.onEmailChange.bind(this)}
 								value={this.props.email}
 							/>
-
+							{this.renderEmailError()}
 							<Input
 								secureTextEntry
 								placeholder="Password"
@@ -76,6 +101,7 @@ class LoginPage extends Component {
 								onChangeText={this.onPasswordChange.bind(this)}
 								value={this.props.password}
 							/>
+							{this.renderPasswordError()}
 						</CardSection>
 						{this.renderError()}
 						<CardSection
