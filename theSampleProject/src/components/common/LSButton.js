@@ -2,11 +2,7 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
 const LSButton = ({ onPress, children }) => (
-	<TouchableOpacity
-		underlayColor="#1ABAEF"
-		onPress={onPress}
-		style={[Styles.buttonStyle, children.style]}
-	>
+	<TouchableOpacity onPress={onPress} style={[Styles.buttonStyle, children.style]}>
 		<Text style={Styles.textStyle}>{children}</Text>
 	</TouchableOpacity>
 );
@@ -30,6 +26,25 @@ const Styles = {
 		marginRight: 30,
 		height: 40,
 		marginBottom: 20
+	},
+	oppositeButtonStyle: {
+		alignSelf: 'stretch',
+		backgroundColor: '#1ABAEF',
+		borderRadius: 5,
+		borderWidth: 1,
+		borderColor: '#fff',
+		marginLeft: 30,
+		marginRight: 30,
+		height: 40,
+		marginBottom: 20
+	},
+	oppositeTextStyle: {
+		alignSelf: 'center',
+		color: '#1ABAEF',
+		fontSize: 16,
+		fontWeight: '600',
+		paddingTop: 10,
+		paddingBottom: 10
 	}
 };
 

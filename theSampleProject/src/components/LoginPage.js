@@ -27,7 +27,7 @@ class LoginPage extends Component {
 		if (this.props.email === '' && this.state.submitButtonPressed === 'true') {
 			return (
 				<View style={{ backgroundColor: 'white' }}>
-					<Text style={Styles.errorTextStyle}>{'Please enter a valid email'}</Text>
+					<Text style={Styles.errorTextStyle}>{'You must provide a email'}</Text>
 				</View>
 			);
 		}
@@ -37,7 +37,7 @@ class LoginPage extends Component {
 		if (this.props.password === '' && this.state.submitButtonPressed === 'true') {
 			return (
 				<View style={{ backgroundColor: 'white' }}>
-					<Text style={Styles.errorTextStyle}>{'Please enter a valid password'}</Text>
+					<Text style={Styles.errorTextStyle}>{'You must provide a password'}</Text>
 				</View>
 			);
 		}
@@ -87,8 +87,8 @@ class LoginPage extends Component {
 								flexDirection: 'column'
 							}}
 						>
-							const selected = false
 							<Input
+
 								placeholder="Email"
 								onChangeText={this.onEmailChange.bind(this)}
 								value={this.props.email}
