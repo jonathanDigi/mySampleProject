@@ -25,18 +25,15 @@ const Input = ({ value, onChangeText, placeholder, secureTextEntry }) => {
 
 const styles = {
 	inputStyle: {
-		color: '#000',
-		fontSize: 18,
+	//ßfontSize: 18,
 		lineHeight: 25,
 		height: 35,
 		width: 300,
-		//borderBottomColor: '#E5E5E5',
-	//	borderBottomWidth: 2
 	},
 
 	containerStyle: {
 		flexDirection: 'row',
-		alignItems: 'center'
+		alignItems: 'center',
 	}
 };
 

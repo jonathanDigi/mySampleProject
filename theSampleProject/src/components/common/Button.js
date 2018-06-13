@@ -22,7 +22,7 @@ const Styles = {
      letterSpacing: 1
   },
   buttonStyle: {
-    flex: 1,
+    //flex: 1,
     alignSelf: 'stretch',
     backgroundColor: '#1ABAEF',
     borderRadius: 5,
@@ -30,7 +30,7 @@ const Styles = {
     borderColor: '#1ABAEF',
     marginLeft: 16,
     marginRight: 16,
-    marginBottom: 100
+    marginBottom: 30
   }
 };
 

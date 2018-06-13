@@ -26,7 +26,7 @@ class LoginPage extends Component {
 	renderEmailError() {
 		if (this.props.email === '' && this.state.submitButtonPressed === 'true') {
 			return (
-				<View style={{ backgroundColor: 'white' }}>
+				<View style={{ backgroundColor: 'white', marginTop: 20 }}>
 					<Text style={Styles.errorTextStyle}>{'You must provide a email'}</Text>
 				</View>
 			);
@@ -36,7 +36,7 @@ class LoginPage extends Component {
 	renderPasswordError() {
 		if (this.props.password === '' && this.state.submitButtonPressed === 'true') {
 			return (
-				<View style={{ backgroundColor: 'white' }}>
+				<View style={{ backgroundColor: 'white', marginTop: 20 }}>
 					<Text style={Styles.errorTextStyle}>{'You must provide a password'}</Text>
 				</View>
 			);
@@ -88,7 +88,6 @@ class LoginPage extends Component {
 							}}
 						>
 							<Input
-
 								placeholder="Email"
 								onChangeText={this.onEmailChange.bind(this)}
 								value={this.props.email}
@@ -108,13 +107,16 @@ class LoginPage extends Component {
 							style={{
 								marginTop: 10,
 								alignItems: 'center',
-								justifyContent: 'center'
+								justifyContent: 'center',
+								flexDirection: 'column'
 							}}
 						>
 							<Button onPress={this.onButtonPress.bind(this)}>SUBMIT</Button>;
+							<UnderLineButton onPress={() => Actions.ForgotPage()}>
+								Forgot Password
+							</UnderLineButton>;
 						</CardSection>
 					</KeyboardAvoidingView>
-					<UnderLineButton onPress={() => Actions.ForgotPage()}>Forgot Password</UnderLineButton>;
 				</Card>
 			</View>
 		);
