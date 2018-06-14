@@ -26,7 +26,7 @@ class LoginPage extends Component {
 	renderEmailError() {
 		if (this.props.email === '' && this.state.submitButtonPressed === 'true') {
 			return (
-				<View style={{ backgroundColor: 'white', marginTop: 20 }}>
+				<View style={{ backgroundColor: 'white', marginTop: 20, flex: 1 }}>
 					<Text style={Styles.errorTextStyle}>{'You must provide a email'}</Text>
 				</View>
 			);
@@ -36,7 +36,7 @@ class LoginPage extends Component {
 	renderPasswordError() {
 		if (this.props.password === '' && this.state.submitButtonPressed === 'true') {
 			return (
-				<View style={{ backgroundColor: 'white', marginTop: 20 }}>
+				<View style={{ backgroundColor: 'white', marginTop: 20, flex: 1 }}>
 					<Text style={Styles.errorTextStyle}>{'You must provide a password'}</Text>
 				</View>
 			);
@@ -45,7 +45,7 @@ class LoginPage extends Component {
 	renderError() {
 		if (this.props.error) {
 			return (
-				<View style={{ backgroundColor: 'white' }}>
+				<View style={{ backgroundColor: 'white', flex: 1 }}>
 					<Text style={Styles.errorTextStyle}>{this.props.error}</Text>
 				</View>
 			);
@@ -60,34 +60,37 @@ class LoginPage extends Component {
 	}
 	render() {
 		return (
-			<View style={{ flex: 1 }}>
-				<Card>
+			<View style={{ flex: 1, paddingBottom: 180, backgroundColor: 'white' }}>
+				<Card style={{ flex: 1 }}>
+
 					<CardSection
 						style={{
-							flex: 0.7,
+							flex: 1,
 							alignItems: 'center',
 							justifyContent: 'center',
 							flexDirection: 'column',
 							paddingTop: 20
 						}}
 					>
-						<CardSection>
+						<CardSection style={{ flex: 1.4 }}>
 							<BackButton onPress={() => Actions.LoginOrSignUp()}> Back </BackButton>
 						</CardSection>
-						<View>
+						<View style={{ flex: 2 }}>
 							<Text style={Styles.blueTextStyle}> Login </Text>
 						</View>
 					</CardSection>
-					<KeyboardAvoidingView style={{ flex: 2 }} behavior="padding">
+
+					<KeyboardAvoidingView style={{ flex: 4 }} behavior="padding">
 						<CardSection
 							style={{
-								flex: 1,
+								flex: 3.5,
 								alignItems: 'center',
 								justifyContent: 'center',
 								flexDirection: 'column'
 							}}
 						>
 							<Input
+								autoFocus
 								placeholder="Email"
 								onChangeText={this.onEmailChange.bind(this)}
 								value={this.props.email}
@@ -108,7 +111,8 @@ class LoginPage extends Component {
 								marginTop: 10,
 								alignItems: 'center',
 								justifyContent: 'center',
-								flexDirection: 'column'
+								flexDirection: 'column',
+								flex: 1.5
 							}}
 						>
 							<Button onPress={this.onButtonPress.bind(this)}>SUBMIT</Button>;

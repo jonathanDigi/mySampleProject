@@ -1,9 +1,13 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const LSButton = ({ onPress, children }) => (
-	<TouchableOpacity onPress={onPress} style={[Styles.buttonStyle, children.style]}>
-		<Text style={Styles.textStyle}>{children}</Text>
+const LSButton = ({ onPress, children, style, textStyle, onPressIn }) => (
+	<TouchableOpacity
+		onPressIn={onPressIn}
+		onPress={onPress}
+		style={[Styles.buttonStyle, children.style, style]}
+	>
+		<Text style={[Styles.textStyle, textStyle]}>{children}</Text>
 	</TouchableOpacity>
 );
 

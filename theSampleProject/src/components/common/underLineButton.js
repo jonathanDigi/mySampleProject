@@ -5,8 +5,8 @@ const UnderLineButton = ({ onPress, children }) => (
 	<TouchableOpacity
 		onPress={onPress}
 		style={{
-		//	flex: 1,
-			marginBottom: 10,
+			flex: 1.5,
+			marginBottom: 1,
 
 			justifyContent: 'flex-end',
 			borderBottomColor: '#1ABAEF',
@@ -22,8 +22,8 @@ const Styles = {
 		alignSelf: 'center',
 		color: '#1ABAEF',
 		fontSize: 20,
-		paddingTop: 5,
-		paddingBottom: 1,
+		paddingTop: 1,
+		paddingBottom: 5,
 		fontWeight: 'normal'
 
 	}
