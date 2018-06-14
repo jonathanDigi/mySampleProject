@@ -20,7 +20,7 @@ const UnderLineButton = ({ onPress, children }) => (
 const Styles = {
 	textStyle: {
 		alignSelf: 'center',
-		color: '#1ABAEF',
+		color: 'gold',
 		fontSize: 20,
 		paddingTop: 1,
 		paddingBottom: 5,
