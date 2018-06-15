@@ -7,7 +7,7 @@ const UnderLineButton = ({ onPress, children }) => (
 		style={{
 			flex: 1.5,
 			marginBottom: 1,
-
+			marginTop: 15,
 			justifyContent: 'flex-end',
 			borderBottomColor: '#1ABAEF',
 			borderBottomWidth: 1
@@ -22,8 +22,8 @@ const Styles = {
 		alignSelf: 'center',
 		color: '#1ABAEF',
 		fontSize: 20,
-		paddingTop: 1,
-		paddingBottom: 5,
+		paddingTop: 5,
+		paddingBottom: 22,
 		fontWeight: 'normal'
 
 	}

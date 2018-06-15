@@ -5,7 +5,7 @@ import { View } from 'react-native';
 const Input = ({ value, onChangeText, placeholder, secureTextEntry }) => {
 	const { inputStyle, containerStyle } = styles;
 	return (
-		<View style={(containerStyle, { justifyContent: 'center', alignItems: 'center', flex: 1 })}>
+		<View style={(containerStyle, { justifyContent: 'center', alignItems: 'center', flex: 1.4 })}>
 			<Hoshi
 				autoFocus
 				secureTextEntry={secureTextEntry}

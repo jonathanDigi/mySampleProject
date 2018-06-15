@@ -26,7 +26,7 @@ class LoginPage extends Component {
 	renderEmailError() {
 		if (this.props.email === '' && this.state.submitButtonPressed === 'true') {
 			return (
-				<View style={{ backgroundColor: 'white', marginTop: 20, flex: 1 }}>
+				<View style={{ backgroundColor: 'white', marginTop: 15, flex: 0.6 }}>
 					<Text style={Styles.errorTextStyle}>{'You must provide a email'}</Text>
 				</View>
 			);
@@ -36,7 +36,7 @@ class LoginPage extends Component {
 	renderPasswordError() {
 		if (this.props.password === '' && this.state.submitButtonPressed === 'true') {
 			return (
-				<View style={{ backgroundColor: 'white', marginTop: 20, flex: 1 }}>
+				<View style={{ backgroundColor: 'white', marginTop: 15, flex: 0.6 }}>
 					<Text style={Styles.errorTextStyle}>{'You must provide a password'}</Text>
 				</View>
 			);
@@ -45,7 +45,7 @@ class LoginPage extends Component {
 	renderError() {
 		if (this.props.error) {
 			return (
-				<View style={{ backgroundColor: 'white', flex: 1 }}>
+				<View style={{ backgroundColor: 'white', flex: 0.6 }}>
 					<Text style={Styles.errorTextStyle}>{this.props.error}</Text>
 				</View>
 			);
@@ -60,7 +60,7 @@ class LoginPage extends Component {
 	}
 	render() {
 		return (
-			<View style={{ flex: 1, paddingBottom: 180, backgroundColor: 'white' }}>
+			<View style={{ flex: 1, paddingBottom: 190, backgroundColor: 'white' }}>
 				<Card style={{ flex: 1 }}>
 
 					<CardSection
@@ -72,7 +72,7 @@ class LoginPage extends Component {
 							paddingTop: 20
 						}}
 					>
-						<CardSection style={{ flex: 1.4 }}>
+						<CardSection style={{ flex: 1.5 }}>
 							<BackButton onPress={() => Actions.LoginOrSignUp()}> Back </BackButton>
 						</CardSection>
 						<View style={{ flex: 2 }}>
@@ -152,7 +152,7 @@ const Styles = {
 		flexDirection: 'row'
 	},
 	errorTextStyle: {
-		fontSize: 22,
+		fontSize: 18,
 		color: 'red',
 		alignSelf: 'center'
 	}
