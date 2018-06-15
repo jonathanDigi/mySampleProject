@@ -5,11 +5,10 @@ import { CardSection, Card, LSButton } from './common';
 
 class LoginOrSignUpPage extends Component {
 	state = {
-		toggle: false
-	};
-	state = {
+		toggle: false,
 		toggled: false
 	};
+
 	onPressIn() {
 		const newState = !this.state.toggle;
 		this.setState({ toggle: newState });
@@ -67,7 +66,7 @@ class LoginOrSignUpPage extends Component {
 					<LSButton
 						style={{ backgroundColor: buttonColorS }}
 						textStyle={{ color: textColorS }}
-						onPress={() => 	Actions.SignupPage()}
+						onPress={() => Actions.SignupPage()}
 						onPressIn={() => this.SonPress()}
 					>
 						SIGNUP

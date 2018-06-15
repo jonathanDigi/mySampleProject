@@ -12,8 +12,8 @@ const Styles = {
 		alignSelf: 'flex-start',
 		color: '#1ABAEF',
 		fontSize: 20,
-		
-		paddingTop: 10,
+
+		paddingTop: 8,
 		paddingBottom: 10
 	}
 };
